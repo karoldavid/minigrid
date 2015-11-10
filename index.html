@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>mini grid</title>
+  <style>
+
+    img {
+        max-width: 100%;
+    }
+
+    .grid {
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+
+    .grid-item {
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        width: 250px;
+    }
+
+    .grid-item--loaded {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="grid">
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+    <div class="grid-item">
+      <img src="img/lorempixel400-200.jpeg">
+    </div>
+  </div>
+  <script src="src/index.js"></script>
+  <script>
+
+      (function(){
+        function grid() {
+          minigrid({
+            container: '.grid',
+            item: '.grid-item',
+            gutter: 6
+          });
+        }
+
+        window.addEventListener('resize', function(){
+          grid();
+        });
+
+        grid();
+
+      })();
+
+  </script>
+</body>
+</html>
